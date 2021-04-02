@@ -9,7 +9,8 @@ var currentHour = moment().format('Ha')
 
 
 
-
+//this allows me to dynamically target the buttons that are on the html.
+//this is also storing that information into the local storage.
 saveButton.click(function (event) {
     event.preventDefault();
     var userInput = document.getElementById(event.target.id.replace("btn", "input"))
