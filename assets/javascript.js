@@ -1,30 +1,34 @@
 //state variables
-// I need a way to save to local storage when the save button is clicked.
+// I need a way to save to local storage when the save button is clicked. I also need a way to specify which button is being clicked to save it accordingly.
 // I need to figure out a way indicate if the timeblock is in the past present or future.
 
-var userInput = $('.description')
 var saveButton = $('.saveBtn')
+var currentHour = moment().format('H')
 
-saveButton.click(function () {
+
+
+
+
+
+saveButton.click(function (event) {
     event.preventDefault();
-    console.log('Hello');
-    var userMessage = {
-        userInput: userInput.value,
-    };
+    var userInput = document.getElementById(event.target.id.replace("btn", "input"))
+    console.log(event);
 
-    localStorage.setItem('userMessage', JSON.stringify(userMessage));
-    showMessage();
+    localStorage.setItem(userInput.id, userInput.value);
 });
 
 
 function showMessage() {
 
-    var oldUserMessage = JSON.parse(localStorage.getItem('userMessage'));
-    if (oldUserMessage !== null) {
-
+    var keys = Object.keys(localStorage)
+    var i = keys.length;
+    for (var j = 0; j < i; j++){
+        document.getElementById(keys[j]).value = localStorage.getItem(keys[j])
     }
-}
 
+}
+showMessage()
 
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM, Do, YYYY"));
