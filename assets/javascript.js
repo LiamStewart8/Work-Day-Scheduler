@@ -3,7 +3,7 @@
 // I need to figure out a way indicate if the timeblock is in the past present or future.
 
 var saveButton = $('.saveBtn')
-var currentHour = moment().format('H')
+var currentHour = moment().format('Ha')
 
 
 
