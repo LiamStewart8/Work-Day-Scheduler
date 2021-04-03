@@ -1,7 +1,7 @@
 # Work-Day-Scheduler
 
 ## Site Picture
-![Image](./assets/plannerpicture.png)
+![Image](./assets/images/plannerpicture.png)
 
 ## Technologies Used
     - Javascript - Used to make the web page interactive and store data.
