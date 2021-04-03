@@ -1,23 +1,19 @@
 var saveButton = $('.saveBtn')
 var currentHour = moment()
-// var allTextBox = $('description');
-
 
 //this allows me to dynamically target the buttons that are on the html.
 //this is also storing that information into the local storage.
 saveButton.click(function (event) {
     event.preventDefault();
     var userInput = document.getElementById(event.target.id.replace("btn", "input"))
-    console.log(event);
-
     localStorage.setItem(userInput.id, userInput.value);
 });
 
-//this is the function that will display the saved message to the page.
+//this is the function that will display the saved message to the page. This also will change the color of the input boxes depending on the hour of the day.
 function showMessage() {
     var timesheet = $('#timesheet')[0]
+    //this is grabbing the child elements of the parent elements
     for (var i = 0; i < timesheet.children.length; i++) {
-
         var timeInputId = timesheet.children[i].id + '_input';
         var timeInput = document.getElementById(timeInputId);
         var userInput = localStorage.getItem(timeInputId)
