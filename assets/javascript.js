@@ -28,7 +28,7 @@ function showMessage() {
         else if (moment(currentHour).isAfter(timesheetTime)) {
             timeInput.classList.add('past');
         }
-        else {
+        else if (moment(currentHour) = (timesheetTime)) {
             timeInput.classList.add('present');
         }
     }
